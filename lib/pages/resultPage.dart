@@ -27,7 +27,7 @@ class ResultPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              (result >= (numberOfQuestions / 2).floor()
+              (result > (numberOfQuestions / 2).floor()
                       ? 'Congrats '
                       : 'Oops, good luck next time ') +
                   name,
