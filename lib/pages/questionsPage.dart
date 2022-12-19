@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:quiz_project/classes/question.dart';
 import 'package:quiz_project/data.dart';
 import 'package:quiz_project/pages/resultPage.dart';
@@ -61,7 +62,12 @@ class _QuestionsPageState extends State<QuestionsPage> {
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
+  Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ]);
+    return Scaffold(
         appBar: AppBar(
           leading: _index == 0
               ? null
@@ -104,4 +110,5 @@ class _QuestionsPageState extends State<QuestionsPage> {
                   toNext: moveToNextQuestion)),
         ),
       );
+  }
 }
